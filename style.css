@@ -1,0 +1,380 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #080014;
+    color: white;
+    overflow: hidden;
+}
+
+
+/* =========================
+   FONDOS
+========================= */
+
+.pantalla {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity 1s ease;
+}
+
+.pantalla.activa {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* =========================
+   FONDO MORADO
+========================= */
+
+#inicio,
+#regalo,
+#cumple,
+#final {
+
+    background:
+        radial-gradient(circle at 20% 20%, #6a1b9a55, transparent 30%),
+        radial-gradient(circle at 80% 70%, #9c27b055, transparent 30%),
+        linear-gradient(135deg, #090014, #1b0033, #080014);
+
+}
+
+
+/* =========================
+   CONTENIDO
+========================= */
+
+.contenido {
+    width: 90%;
+    max-width: 700px;
+
+    padding: 30px;
+
+    position: relative;
+    z-index: 5;
+}
+
+h1 {
+    font-size: clamp(2rem, 6vw, 4rem);
+    margin-bottom: 20px;
+
+    text-shadow:
+        0 0 10px #c77dff,
+        0 0 25px #9d4edd;
+}
+
+h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   BOTONES
+========================= */
+
+button {
+    border: none;
+
+    padding: 16px 30px;
+
+    border-radius: 40px;
+
+    background: linear-gradient(
+        135deg,
+        #7b2cbf,
+        #c77dff
+    );
+
+    color: white;
+
+    font-size: 1rem;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 15px #9d4edd,
+        0 0 30px #7b2cbf;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+
+    box-shadow:
+        0 0 25px #c77dff,
+        0 0 50px #9d4edd;
+}
+
+
+/* =========================
+   CORAZÓN PRINCIPAL
+========================= */
+
+.emoji-principal {
+    font-size: 90px;
+
+    animation:
+        latido 1.5s infinite;
+}
+
+@keyframes latido {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+
+/* =========================
+   CAJA
+========================= */
+
+.caja {
+    font-size: 130px;
+
+    cursor: pointer;
+
+    display: inline-block;
+
+    animation:
+        flotar 2s infinite ease-in-out;
+
+    transition: 0.3s;
+}
+
+.caja:hover {
+    transform: scale(1.2);
+}
+
+@keyframes flotar {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+
+/* =========================
+   PASTEL
+========================= */
+
+.pastel {
+    font-size: 110px;
+
+    margin: 20px;
+
+    animation:
+        pastel 1.5s infinite ease-in-out;
+}
+
+@keyframes pastel {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(2deg);
+    }
+}
+
+
+/* =========================
+   NOMBRE
+========================= */
+
+.nombre {
+    color: #e0aaff;
+
+    font-size: 3rem;
+
+    text-shadow:
+        0 0 10px #c77dff,
+        0 0 30px #9d4edd;
+}
+
+
+/* =========================
+   CARTA
+========================= */
+
+.carta {
+
+    background: rgba(255,255,255,0.08);
+
+    border: 1px solid rgba(255,255,255,0.2);
+
+    backdrop-filter: blur(10px);
+
+    padding: 30px;
+
+    border-radius: 25px;
+
+    margin: 20px auto;
+
+    box-shadow:
+        0 0 30px rgba(157,78,221,0.3);
+}
+
+.carta p {
+    font-size: 1rem;
+}
+
+.carta h3 {
+    margin-top: 25px;
+
+    font-size: 1.5rem;
+
+    color: #e0aaff;
+}
+
+
+/* =========================
+   FINAL
+========================= */
+
+.final h1 {
+    color: #e0aaff;
+}
+
+.mensaje-final {
+    font-size: 3rem;
+
+    color: #d0a3ff;
+
+    margin: 30px 0;
+
+    text-shadow:
+        0 0 10px #c77dff,
+        0 0 30px #9d4edd;
+}
+
+.corazones {
+    font-size: 3rem;
+
+    animation:
+        latido 1.5s infinite;
+}
+
+.confeti {
+    font-size: 2rem;
+
+    margin-top: 30px;
+}
+
+
+/* =========================
+   ESTRELLAS
+========================= */
+
+.stars::before,
+.stars::after {
+
+    content: "✦  ✧  ⋆  ✦  ✧  ⋆  ✦  ✧  ⋆  ✦";
+
+    position: fixed;
+
+    width: 100%;
+
+    top: 10%;
+
+    left: 0;
+
+    color: white;
+
+    font-size: 25px;
+
+    letter-spacing: 30px;
+
+    opacity: 0.7;
+
+    animation:
+        estrellas 8s linear infinite;
+}
+
+.stars::after {
+
+    top: 70%;
+
+    animation-duration: 12s;
+
+    opacity: 0.4;
+}
+
+@keyframes estrellas {
+
+    from {
+        transform: translateX(-100px);
+    }
+
+    to {
+        transform: translateX(100px);
+    }
+
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 600px) {
+
+    .contenido {
+        padding: 20px;
+    }
+
+    .caja {
+        font-size: 100px;
+    }
+
+    .pastel {
+        font-size: 80px;
+    }
+
+    .carta {
+        padding: 20px;
+    }
+
+    .carta p {
+        font-size: 0.95rem;
+    }
+
+    .nombre {
+        font-size: 2.5rem;
+    }
+
+}
